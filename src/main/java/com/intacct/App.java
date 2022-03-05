@@ -1,6 +1,6 @@
 package com.intacct;
 
-import com.intacct.schema.Schema;
+import com.intacct.config.DataSourceConfiguration;
 import com.intacct.schema.internal.SchemaHarmonia;
 import oracle.jdbc.pool.OracleDataSource;
 import org.apache.commons.configuration2.BaseConfiguration;
@@ -38,7 +38,7 @@ public class App {
         dataSource.setPassword(config.getString("db.password"));
 
 
-        Schema schema = SchemaHarmonia.getInstance(dataSource);
+        Harmonia schema = SchemaHarmonia.getInstance();
 
         boolean customer = schema.hasTable("CUSTOMERS");
         boolean city = schema.hasColumnName("CUSTOMERS", "CITY");

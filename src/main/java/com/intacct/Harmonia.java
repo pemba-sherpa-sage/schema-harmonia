@@ -1,8 +1,8 @@
-package com.intacct.schema;
+package com.intacct;
 
 import java.sql.SQLException;
 
-public interface Schema {
+public interface Harmonia {
 
     boolean hasTable(String tableName) throws SQLException;
 

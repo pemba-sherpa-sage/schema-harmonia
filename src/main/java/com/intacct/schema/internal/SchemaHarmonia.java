@@ -1,26 +1,37 @@
 package com.intacct.schema.internal;
 
-import com.intacct.schema.Schema;
+import com.intacct.config.DataSourceConfiguration;
+import com.intacct.Harmonia;
 import com.intacct.schema.model.ColumnInfo;
+import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.sql.DataSource;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class SchemaHarmonia implements Schema {
-    private final Logger logger = LoggerFactory.getLogger(com.intacct.schema.Schema.class);
+public class SchemaHarmonia implements Harmonia {
+    private final Logger logger = LoggerFactory.getLogger(Harmonia.class);
     private final DataSource dataSource;
 
     private SchemaHarmonia(final DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
-    public static Schema getInstance(DataSource dataSource) {
+    public static Harmonia getInstance(DataSource dataSource) {
         return new SchemaHarmonia(dataSource);
+    }
+
+    public static Harmonia getInstance(String jdbUrl, String userName, String password) throws SQLException {
+        return getInstance(DataSourceConfiguration.getDataSource(jdbUrl,userName,password));
+    }
+
+    public static Harmonia getInstance() throws SQLException, ConfigurationException, IOException {
+        return getInstance(DataSourceConfiguration.getDataSource(DataSourceConfiguration.Source.CONFIG_PROPERTIES));
     }
 
     @Override
