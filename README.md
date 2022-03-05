@@ -43,6 +43,13 @@ db.password=athena
         :
 ```
 ## Consuming the `schema-harmonia.jar` as stand-alone jar
+1. Step 1
+2. Step 2
+
+## Instruction for ojdbc8.jar download
+
+## ent2qry in PHP interception example?
+
 
 
 
