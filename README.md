@@ -1,7 +1,12 @@
 # schema-harmonia
 This project is written with the goal of enabling the Schema Passivity in our code-base.
 
-The primary goal is of this project is to be a re-usable asset that any Java based project and import as a dependency. However, since we do we have PHP code base that may benefit from this as well. For that reason, I have exposed multiple ways in which this `schema-harmonia.jar` can be consued.
+As we are moving more and more toward being a full cloud-native application, we need to be more resilient in the situation where the code and schema may not be in-sync.
+There can be many situation which can cause the code and schema to be not in-sync like, missing migration, migration inflight, etc. In any case, we shouldn't create failures and outage. We should try to adopt a more graceful resolution in such cases. This is the main focus of `schema-harmonia`
+
+This project is hoping to be a re-usable asset that any Java based project and import as a dependency to leverage the Schema Passivity it provides.
+
+We do we have PHP code base that may benefit from this as well. For that reason, as a future enhancement we can expose ways in which this `schema-harmonia.jar` can be consumed in a standalone manner and enable non-Java based project to utilize it as well.
 
 
 # Pre-requisite
@@ -42,13 +47,9 @@ db.password=athena
         :
         :
 ```
-## Consuming the `schema-harmonia.jar` as stand-alone jar
+## [Future Work] Consuming the `schema-harmonia.jar` as stand-alone jar
 1. Step 1
 2. Step 2
-
-## Instruction for ojdbc8.jar download
-
-## ent2qry in PHP interception example?
 
 
 
