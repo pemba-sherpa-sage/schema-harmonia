@@ -8,7 +8,7 @@ This project is hoping to be a re-usable asset that any Java based project and i
 
 We do we have PHP code base that may benefit from this as well. For that reason, as a future enhancement we can expose ways in which this `schema-harmonia.jar` can be consumed in a standalone manner and enable non-Java based project to utilize it as well.
 
-test
+
 # Pre-requisite
 - JDK 11+
 - Maven 3.x
